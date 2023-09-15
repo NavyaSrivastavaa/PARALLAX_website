@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Parallax Scrolling Website | Vanilla Javascript</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;500&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">ParallaxVista</a>
+        <ul type="none">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#sec">About</a></li>
+            <li><a href="#home">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="stars.png.png" id="stars">
+        <img src="moon.png.png" id="moon">
+        <img src="mountains_behind.png.png" id="mountains_behind">
+        <h1 id="text">ScrollScape</h1>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="mountains_front.png.png " id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effect</h2>
+        <p>Parallax scrolling is a technique used in web design to create an engaging and dynamic user experience. It
+            involves the background of a webpage moving at a different speed than the foreground content as the user
+            scrolls down the page. This creates an illusion of depth and adds a sense of interactivity and visual
+            interest to the website.
+            The term "parallax" refers to the apparent displacement or difference in the position of an object when
+            viewed from different angles. In the context of web design, it means that as users scroll down a parallax
+            website, different elements on the page move at varying speeds, giving the impression of a multi-layered,
+            3D-like environment.<br> The Parallax it’s measured by the semi-angle of inclination between those two
+            lines.Parallax scrolling is a visual effect where the background of a web page appears to stay still while
+            the foreground shifts vertically or horizontally. Parallax scrolling is used to add visual interest to a
+            website and engage users as they scroll through a web page.<br>
+            In a parallax scrolling effect, both the foreground and background are moving, but the background typically
+            moves much more slowly, giving the illusion of depth. Done correctly, parallax scrolling produces a
+            fascinating and seamless virtual experience.</p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+        window.addEventListener('scroll', function () {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+
+        })
+    </script>
+    <section class="contact" id="contact">
+        <div class="contact-text">
+            <h2>Contact <span>Me</span></h2>
+            <h4>Let's work together</h4>
+            <div class="contact-list">
+                <li type="none">
+
+                    navyasrivastavajnp@gmail.com
+                </li>
+                <li type="none">
+
+                    +91-8081246127
+                </li>
+                <li>
+                    <h4>Coding Profiles</h4>
+                </li>
+                <li><a href="https://leetcode.com/navyasrivastava_26/" style="text-decoration: none; color: aliceblue;">
+                        
+                        Profile | Leetcode
+                    </a>
+                </li>
+                <li><a href="https://www.hackerrank.com/2101640109007_cs"
+                        style="text-decoration: none; color: aliceblue;">
+                         Profile | Hackerrank
+                    </a>
+                </li>
+            </div>
+        </div>
+
+    </section>
+
+    <div class="last-text">
+        <p style="color:#ecb8f5">Developed By © Navya Srivastava</p>
+    </div>
+    <a href="#" class="top"><i class='bx bxs-up-arrow-square'></i></a>
+
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>
